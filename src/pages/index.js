@@ -1,5 +1,11 @@
-import React from "react"
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/Layout";
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <Layout>
+      <h1 style={{color: 'red', textTransform: 'capitalize'}}>hola</h1>
+    </Layout>
+    );
 }
