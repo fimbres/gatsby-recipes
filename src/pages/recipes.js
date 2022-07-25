@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout';
 
-const about = () => {
+const recipes = () => {
   return (
     <Layout>
-        <div>About Page</div>
+        <div>Recipes Page</div>
     </Layout>
   )
 }
 
-export default about;
+export default recipes;
