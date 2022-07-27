@@ -7,8 +7,17 @@ import "../assets/css/main.css";
 export default function Home() {
   return (
     <Layout>
-      <h1>Home Page</h1>
-      <StaticImage src="../assets/img/banner.jpg" alt="utils" placeholder="tracedSVG" layout="fullWidth" />
+      <main className="page">
+        <header className="hero">
+          <StaticImage src="../assets/img/banner.jpg" alt="ingredients" className="hero-img" placeholder="tracedSVG" layout="fullWidth"/>
+          <div className="hero-container">
+            <div className="hero-text">
+              <h1>Simply Recipe</h1>
+              <h4>No fluff, just recipes!</h4>
+            </div>
+          </div>
+        </header>
+      </main>
     </Layout>
     );
 }
