@@ -13,7 +13,7 @@ const contact = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </article>
           <article>
-            <form className='form contact-form'>
+            <form className='form contact-form' action="https://formspree.io/f/myyorror" method="POST">
               <div className='form-row'>
                 <label htmlFor='name'>your name</label>
                 <input type="text" id='name' name='name'></input>
