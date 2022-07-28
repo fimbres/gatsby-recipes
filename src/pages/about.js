@@ -1,10 +1,36 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Recipeslist from '../components/Recipeslist';
+
+const query = graphql`
+  {
+    allContentfulRecipe(sort: {fields: title}, filter: {featured: {eq: true}}) {
+      nodes {
+        id
+        title
+        servings
+        prepTime
+        featured
+        cookTime
+        content {
+          instructions
+          ingredients
+          tags
+        }
+        image {
+          gatsbyImage(placeholder: BLURRED, layout: CONSTRAINED, height: 400)
+        }
+      }
+    }
+  }
+`;
 
 const About = () => {
+  const { allContentfulRecipe: { nodes: recipes } } = useStaticQuery(query);
+
   return (
     <Layout>
         <main className='page'>
@@ -16,6 +42,10 @@ const About = () => {
               <Link to='/contact' className='btn'>Contact</Link>
             </article>
             <StaticImage src="../assets/img/banner.jpg" alt='Ingredients' className='about-img' placeholder='blurred'/>
+          </section>
+          <section className='featured-recipes'>
+            <h5>Look at this awesome recipes!</h5>
+            <Recipeslist recipes={recipes} />
           </section>
         </main>
     </Layout>
