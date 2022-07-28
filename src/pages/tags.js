@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import slugify from 'slugify';
 
 import Layout from '../components/Layout';
 import setupTags from '../utils/setupTags';
@@ -26,7 +27,8 @@ const Tags = () => {
         <section className='tags-page'>
           {newTags.map((tag, index) => {
             const [text, value] = tag;
-            return <Link key={index} to={`/${text}`} className="tag">
+            const slug = slugify(text, { lower: true });
+            return <Link key={index} to={`/${slug}`} className="tag">
               <h5>{text}</h5>
               <p>{value} {`recipe${value > 1 ? "s" : ""}`}</p>
             </Link>
