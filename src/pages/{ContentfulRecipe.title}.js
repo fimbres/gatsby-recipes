@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { BsClockHistory, BsClock, BsPeople } from 'react-icons/bs';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 export const query = graphql`
     query getSingleRecipe($title: String) {
@@ -35,6 +36,7 @@ const RecipeTemplate = ({ data }) => {
     const { tags, instructions, ingredients, tools } = content;
     return (
         <Layout>
+            <SEO title={title}/>
             <main className='page'>
                 <div className='recipe-page'>
                     <section className='recipe-hero'>

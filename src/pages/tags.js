@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import slugify from 'slugify';
 
+import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import setupTags from '../utils/setupTags';
 
@@ -23,6 +24,7 @@ const Tags = () => {
 
   return (
     <Layout>
+      <SEO title="Recipe Tags"/>
       <main className='page'>
         <section className='tags-page'>
           {newTags.map((tag, index) => {

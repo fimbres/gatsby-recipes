@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Recipeslist from '../components/Recipeslist';
+import SEO from '../components/SEO';
 
 const query = graphql`
   {
@@ -33,6 +34,7 @@ const About = () => {
 
   return (
     <Layout>
+        <SEO title="About Us"/>
         <main className='page'>
           <section className='about-page'>
             <article>

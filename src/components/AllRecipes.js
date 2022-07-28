@@ -30,11 +30,10 @@ const query = graphql`
 const AllRecipes = () => {
     const { allContentfulRecipe: { nodes: recipes } } = useStaticQuery(query);
     return (
-        <div>
-            <h4>All Recipes</h4>
+        <section className='recipes-container'>
             <TagsList recipes={recipes}/>
             <Recipeslist recipes={recipes}/>
-        </div>
+        </section>
     )
 }
 
